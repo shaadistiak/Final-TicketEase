@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | TicketEase</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<!-- Navbar -->
+
+<section class="nav mx-24 mb-10 bg-gray-100">
+
+  <div>
+      <div class="navbar bg-gray-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </div>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a>Home</a></li>
+                  <li><a>About</a></li>
+                  <li><a>Destination</a></li>
+                  <li><a>Search</a></li>
+              </ul>
+            </div>
+            <a class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150 cursor-pointer">TicketEase</a>
+          </div>
+          <div class="navbar-center hidden lg:flex text-xl text-gray-600">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+        
+
+          <div class="navbar-end ">
+
+            <div class="btn btn-outline btn-success bg-green-100 mr-6">
+              <a onclick="window.location.href='profile.html' " class="font-semibold text-xl text-[#1DD100]">Profile</a>
+              <a class="w-6"><img class="w-auto" src="images/profile.png" alt="Profile Icon"></a>
+            </div>
+
+
+
+              <div class="btn btn-outline btn-success bg-green-100">
+                  <a onclick="window.location.href='login.html'" class="font-semibold text-xl text-[#1DD100]">Login</a>
+            <a class="w-6"><img class="w-auto" src="images/tabler-icon-bus.png" alt=""></a>
+              </div>
+              
+            
+          </div>
+
+          
+        </div>
+      </div>
+
+
+        </div>
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+  <!-- Profile Page Container -->
+  <div class="container mx-auto p-6 mt-10 max-w-lg">
+    <h1 class="text-3xl font-bold text-center mb-8"> User Profile</h1>
+
+    <!-- Profile Section -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4">Personal Information</h2>
+
+      <!-- Username Field -->
+      <div class="mb-4">
+        <label for="username" class="block text-gray-700 font-medium">Username</label>
+        <div class="flex items-center gap-2">
+          <input 
+            type="text" 
+            id="username" 
+            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
+          />
+          <button 
+            id="update-username-btn"
+            class=" btn-outline btn-success bg-green-500 p-2 rounded ">
+            Update
+          </button>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 font-medium">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100 cursor-not-allowed"
+          readonly 
+        />
+      </div>
+
+      <!-- Phone Number Field -->
+      <div class="mb-4">
+        <label for="phone" class="block text-gray-700 font-medium">Phone Number</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          class="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100 cursor-not-allowed"
+          readonly 
+        />
+      </div>
+
+      <!-- Cart Items -->
+      <div class="mt-6 flex justify-between items-center">
+        <span class="text-lg font-medium">Items in Cart:</span>
+        <span id="cart-count" class="text-lg font-semibold">0</span>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<section class="foot mt-28 bg-[#030712] px-36 pt-32 pb-32">
+
+
+  <div class="flex justify-between border-b-2 border-gray-600 border-dashed">
+
+
+    <div class="mb-12">
+
+      <p class="text-white text-4xl font-bold mb-4" >TicketEase</p>
+      <p class="text-gray-300 ">TicketEase is a digital platform to make your <br> daily commuting better.</p>
+
+    </div>
+
+    <div class="mb-12">
+
+      <p class="text-white text-xl font-semibold mb-5">Download our app</p>
+      <img src="images/Group 104.png" alt="" class="btn btn-ghost hover:bg-[#030712]">
+
+    </div>
+
+  </div>
+
+
+  <div class="mt-8 flex justify-between">
+
+    <div>
+      <p class="text-gray-400">@all rights reserved, P-Ticket services limited.2024</p>
+    </div>
+
+    <div class="text-white flex gap-8">
+      <p>Terms & condition</p>
+      <p>Return & refund policy</p>
+      <p>Privacy policy</p>
+    </div>
+
+
+
+  </div>
+
+
+</section>
+
+
+
+
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const updateUsernameBtn = document.getElementById("update-username-btn");
+    const cartCountElement = document.getElementById("cart-count");
+
+    // Retrieve user data from localStorage (set during login/signup)
+    const userData = JSON.parse(localStorage.getItem("userProfile")) || {
+      username: "Guest User",
+      email: "user@example.com",
+      phone: "+1234567890"
+    };
+
+    // Retrieve cart data
+    const cartData = JSON.parse(localStorage.getItem("selectedSeats")) || [];
+
+    // Populate fields with user data
+    usernameInput.value = userData.username;
+    emailInput.value = userData.email;
+    phoneInput.value = userData.phone;
+
+    // Populate cart count
+    cartCountElement.textContent = cartData.length;
+
+    // Update username
+    updateUsernameBtn.addEventListener("click", () => {
+      const newUsername = usernameInput.value.trim();
+
+      if (!newUsername) {
+        alert("Username cannot be empty.");
+        usernameInput.value = userData.username; // Reset to previous value
+        return;
+      }
+
+      userData.username = newUsername;
+      localStorage.setItem("userProfile", JSON.stringify(userData));
+
+      alert("Username updated successfully!");
+    });
+
+    // Update cart count dynamically
+    function updateCartCount() {
+      const updatedCartData = JSON.parse(localStorage.getItem("selectedSeats")) || [];
+      cartCountElement.textContent = updatedCartData.length;
+    }
+
+    // Watch for cart updates in other tabs
+    window.addEventListener("storage", updateCartCount);
+  </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+<!-- Navbar -->
+<section class="nav mx-24 mb-10 bg-gray-100">
+
+    <div>
+        <div class="navbar bg-gray-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                </ul>
+              </div>
+              <a class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150 cursor-pointer">TicketEase</a>
+            </div>
+            <div class="navbar-center hidden lg:flex text-xl text-gray-600">
+              <ul class="menu menu-horizontal px-1">
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Destination</a></li>
+                <li><a>Search</a></li>
+              </ul>
+            </div>
+          
+  
+            <div class="navbar-end ">
+  
+              <div class="btn btn-outline btn-success bg-green-100 mr-6">
+                <a onclick="window.location.href='profile.html' " class="font-semibold text-xl text-[#1DD100]">Profile</a>
+                <a class="w-6"><img class="w-auto" src="images/profile.png" alt="Profile Icon"></a>
+              </div>
+  
+  
+  
+                <div class="btn btn-outline btn-success bg-green-100">
+                    <a onclick="window.location.href='login.html'" class="font-semibold text-xl text-[#1DD100]">Login</a>
+              <a class="w-6"><img class="w-auto" src="images/tabler-icon-bus.png" alt=""></a>
+                </div>
+                
+              
+            </div>
+  
+            
+          </div>
+        </div>
+  
+  
+          </div>
+  
+    </div>
+  
+  
+  
+  </section>
+  
+
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center mt-16">
+    <div class="w-full max-w-sm p-6 bg-white rounded-lg shadow-md">
+        <!-- Tabs -->
+        <div class="flex justify-around mb-6">
+            <button id="loginTab" onclick="openForm(event, 'login')" class="text-black font-semibold border-b-2 pb-1 border-transparent hover:border-green-500 focus:outline-none">
+                LOGIN
+            </button>
+            <button id="signupTab" onclick="openForm(event, 'signup')" class="text-green-600 font-semibold border-b-2 pb-1 border-transparent hover:border-green-500 focus:outline-none">
+                SIGN UP
+            </button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="form-content hidden">
+            <input type="email" placeholder="Email" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <input type="password" placeholder="Password" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <button class="w-full py-2 text-white bg-green-600 rounded hover:bg-green-500">LOGIN</button>
+            <p class="mt-4 text-sm">Don't have an account? <a href="#" onclick="openForm(event, 'signup')" class="text-blue-500 hover:underline">Sign Up</a></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup" class="form-content">
+            <input type="text" placeholder="Phone" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <input type="text" placeholder="First Name" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <input type="text" placeholder="Last Name" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <input type="email" placeholder="Email" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <input type="password" placeholder="Password" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <button class="w-full py-2 text-white bg-green-600 rounded hover:bg-green-500">SIGN UP</button>
+            <p class="mt-4 text-sm">Have an account? <a href="#" onclick="openForm(event, 'login')" class="text-blue-500 hover:underline">Login</a></p>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+
+<section class="foot mt-28 bg-[#030712] px-36 pt-32 pb-32">
+
+
+    <div class="flex justify-between border-b-2 border-gray-600 border-dashed">
+
+
+      <div class="mb-12">
+
+        <p class="text-white text-4xl font-bold mb-4" >TicketEase</p>
+        <p class="text-gray-300 ">TicketEase is a digital platform to make your <br> daily commuting better.</p>
+
+      </div>
+
+      <div class="mb-12">
+
+        <p class="text-white text-xl font-semibold mb-5">Download our app</p>
+        <img src="images/Group 104.png" alt="" class="btn btn-ghost hover:bg-[#030712]">
+
+      </div>
+
+    </div>
+
+
+    <div class="mt-8 flex justify-between">
+
+      <div>
+        <p class="text-gray-400">@all rights reserved, TicketEase-Ticket services limited.2024</p>
+      </div>
+
+      <div class="text-white flex gap-8">
+        <p>Terms & condition</p>
+        <p>Return & refund policy</p>
+        <p>Privacy policy</p>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </section>
+
+
+
+<!-- <script>
+    function openForm(evt, formName) {
+        const forms = document.querySelectorAll('.form-content');
+        forms.forEach(form => form.classList.add('hidden'));
+
+        document.getElementById(formName).classList.remove('hidden');
+
+        // Update active tab styling
+        document.getElementById('loginTab').classList.toggle('border-green-500', formName === 'login');
+        document.getElementById('signupTab').classList.toggle('border-green-500', formName === 'signup');
+    }
+
+    // Default form to show (Signup)
+    openForm(null, 'signup');
+</script> -->
+
+
+<script>
+    // Handle form toggle between Login and Signup
+    function openForm(evt, formName) {
+        const forms = document.querySelectorAll('.form-content');
+        forms.forEach(form => form.classList.add('hidden'));
+
+        document.getElementById(formName).classList.remove('hidden');
+
+        // Update active tab styling
+        document.getElementById('loginTab').classList.toggle('border-green-500', formName === 'login');
+        document.getElementById('signupTab').classList.toggle('border-green-500', formName === 'signup');
+    }
+
+    // Default form to show (Signup)
+    openForm(null, 'signup');
+
+    // Add event listener for login form
+    const loginForm = document.getElementById('login');
+    loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const emailInput = loginForm.querySelector('input[type="email"]');
+        const passwordInput = loginForm.querySelector('input[type="password"]');
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (email && password) {
+            // Simulate fetching user data (replace with real login validation logic)
+            const userProfile = {
+                username: "JohnDoe",
+                email: email,
+                phone: "+9876543210", // Replace this with dynamic phone if available
+            };
+
+            // Save user profile to localStorage
+            localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+            // Redirect to profile page
+            alert('Login successful!');
+            window.location.href = 'profile.html';
+        } else {
+            alert('Please enter valid email and password.');
+        }
+    });
+
+    // Add event listener for signup form
+    const signupForm = document.getElementById('signup');
+    signupForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const phoneInput = signupForm.querySelector('input[placeholder="Phone"]');
+        const firstNameInput = signupForm.querySelector('input[placeholder="First Name"]');
+        const lastNameInput = signupForm.querySelector('input[placeholder="Last Name"]');
+        const emailInput = signupForm.querySelector('input[placeholder="Email"]');
+        const passwordInput = signupForm.querySelector('input[placeholder="Password"]');
+
+        const phone = phoneInput.value.trim();
+        const firstName = firstNameInput.value.trim();
+        const lastName = lastNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (phone && firstName && lastName && email && password) {
+            const userProfile = {
+                username: `${firstName} ${lastName}`,
+                email: email,
+                phone: phone,
+            };
+
+            // Save user profile to localStorage
+            localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+            // Redirect to profile page
+            alert('Signup successful!');
+            window.location.href = 'profile.html';
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+</script>
+
+
+</body>
+</html>
