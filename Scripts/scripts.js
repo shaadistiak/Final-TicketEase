@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 const seatarr = [];
 const seatPrice = 550;
 let totalPrice = 0;
@@ -31,6 +20,13 @@ const phoneInput = document.getElementById('phoneInput');
 const nextButton = document.getElementById('nextButton');
 const bodySec = document.getElementById('skele');
 const lastSec = document.getElementById('done');
+
+function navigateToCart (){
+    setTimeout(() => {
+        window.location.href = '../ncart.html';
+      }, 2000); 
+    }
+
 
 for (let i = 0; i < seatnum.length; i++) {
     seatnum[i].addEventListener("click", function () {
@@ -134,8 +130,11 @@ phoneInput.addEventListener('input', validateInputs);
 
 nextButton.addEventListener('click', function () {
 
-    localStorage.setItem('selectedSeats',JSON.stringify(seatarr))
+
+    
     if(nameInput.value && phoneInput.value && seatarr.length>0){
+        localStorage.setItem('selectedSeats',JSON.stringify(seatarr))
+        insertSeats(seatarr)
 
     bodySec.classList.add('hidden');
     lastSec.classList.remove('hidden');
@@ -147,14 +146,19 @@ nextButton.addEventListener('click', function () {
 
 });
 
+const LocalVal = localStorage.getItem('userProfile')
 
-const userProfile = {
-  username: "JohnDoe",
-  email: "johndoe@example.com",
-  phone: "+9876543210"
-};
-localStorage.setItem("userProfile", JSON.stringify(userProfile));
-localStorage.removeItem("userProfile");
+
+if(!LocalVal){
+    const userProfile = {
+        username: "JohnDoe",
+        email: "johndoe@example.com",
+        phone: "+9876543210"
+      };
+      localStorage.setItem("userProfile", JSON.stringify(userProfile));
+}
+
+
 
 
 

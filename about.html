@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | TicketEase</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<style>
+  .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #1DD100;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    background-color: #158700;
+  }
+</style>
+
+<body class="bg-whitefont-sans">
+
+  <!-- Navbar -->
+  <section class="nav w-11/12 m-auto my-10">
+
+    <div>
+      <div class="navbar bg-white">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52">
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <a onclick="window.location.href='index.html' "
+            class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150 cursor-pointer">TicketEase</a>
+        </div>
+        <div class="navbar-center hidden lg:flex text-xl text-gray-600">
+          <ul class="menu menu-horizontal px-1">
+            <li><a onclick="window.location.href='index.html' ">Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a onclick="window.location.href='ncart.html' ">Cart</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end ">
+
+          <div class="btn btn-outline btn-success bg-green-100 mr-6">
+            <a onclick="window.location.href='profile.html' " class="font-semibold text-xl text-[#1DD100]">Profile</a>
+            <a class="w-6"><img class="w-auto" src="https://i.ibb.co.com/MBNg6nb/profile.png" alt="Profile Icon"></a>
+          </div>
+
+
+
+          <div class="btn btn-outline btn-success bg-green-100">
+            <a onclick="window.location.href='login.html'" class="font-semibold text-xl text-[#1DD100]">Login</a>
+            <a class="w-6"><img class="w-auto" src="images/tabler-icon-bus.png" alt=""></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+
+  <!-- About Us Section -->
+  <section class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center mb-6">About Us</h1>
+    <p class="text-lg text-gray-700 text-center mb-10">
+      Welcome to <strong>TicketEase</strong>, an innovative online platform dedicated to revolutionizing the way people
+      book bus tickets. Designed with convenience in mind, TicketEase eliminates the hassle of traditional ticket
+      purchasing, offering a seamless, digital-first approach. Whether you're planning your daily commute or a
+      long-distance journey, TicketEase ensures a fast, reliable, and user-friendly experience.
+    </p>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="bg-slate-300 shadow-md rounded-lg p-6 container mx-auto mt-10">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Contact Us</h2>
+    <form id="contact-form" class="max-w-lg mx-auto">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700 font-medium">Name</label>
+        <input type="text" id="name" class="w-full px-3 py-2 border rounded-lg" placeholder="Your Name" required>
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 font-medium">Email</label>
+        <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg" placeholder="Your Email" required>
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-gray-700 font-medium">Message</label>
+        <textarea id="message" class="w-full px-3 py-2 border rounded-lg" placeholder="Your Message" rows="5"
+          required></textarea>
+      </div>
+      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="text-center mt-10">
+    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+    <div class="social-icons flex justify-center gap-4">
+      <a href="#" title="Facebook"><i class="fab fa-facebook-f">F</i></a>
+      <a href="#" title="X"><i class="fab fa-twitter">X</i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram">I</i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="foot mt-28 bg-[#030712] px-36 pt-32 pb-32">
+
+
+    <div class="flex justify-between border-b-2 border-gray-600 border-dashed">
+
+
+      <div class="mb-12">
+
+        <p class="text-white text-4xl font-bold mb-4">TicketEase</p>
+        <p class="text-gray-300 ">TicketEase is a digital platform to make your <br> daily commuting better.</p>
+
+      </div>
+
+      <div class="mb-12">
+
+        <p class="text-white text-xl font-semibold mb-5">Download our app</p>
+        <img src="images/Group 104.png" alt="" class="btn btn-ghost hover:bg-[#030712]">
+
+      </div>
+
+    </div>
+
+
+    <div class="mt-8 flex justify-between">
+
+      <div>
+        <p class="text-gray-400">@all rights reserved, P-Ticket services limited.2024</p>
+      </div>
+
+      <div class="text-white flex gap-8">
+        <p>Terms & condition</p>
+        <p>Return & refund policy</p>
+        <p>Privacy policy</p>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </section>
+
+  <script>
+    // Handle contact form submission
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      alert(`Thank you, ${name}, for reaching out! We will contact you soon at ${email}.`);
+
+      form.reset(); // Reset the form after submission
+    });
+  </script>
+
+</body>
+
+</html>

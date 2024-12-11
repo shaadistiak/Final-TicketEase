@@ -1,22 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en" data-theme="light">
 <head>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+ 
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus-Ticket-Management-System</title>
     <link rel="stylesheet" href="Styles/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
 
-  </style>
-
-    
-    <script src="./Scripts/supabase.js"></script>
 
 
 <style>
@@ -24,29 +20,7 @@
   
 
   </style>
-  <script>
-    async function fetchData() {
-    const supabaseUrl = 'https://ztxcegujgljpxnqijsbs.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0eGNlZ3VqZ2xqcHhucWlqc2JzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI2MzYxOTAsImV4cCI6MjA0ODIxMjE5MH0.Ri4drXjfZFuuUdlC3_dfeO0EP3A8TWF3sRNBUGNovNg';
 
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
-    const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .eq('userid',20001);
-    
-    if (error) {
-        console.error('Error fetching data:', error);
-    } else {
-        console.log('Data:', data);
-    }
-}
-
-
-setTimeout(fetchData, 2000);
-
-  </script>
 
 </head>
 <body>
@@ -69,14 +43,14 @@ setTimeout(fetchData, 2000);
                       <li><a>Search</a></li>
                   </ul>
                 </div>
-                <a class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150">TicketEase</a>
+                <a  class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150 cursor-pointer">TicketEase</a>
               </div>
               <div class="navbar-center hidden lg:flex text-xl text-gray-600">
                 <ul class="menu menu-horizontal px-1">
                   <li><a>Home</a></li>
-                  <li><a>About</a></li>
+                  <li><a  onclick="window.location.href='about.html' ">About</a></li>
                   <li><a>Destination</a></li>
-                  <li><a>Search</a></li>
+                  <li><a onclick="window.location.href='ncart.html' ">Cart</a></li>
                 </ul>
               </div>
               <div class="navbar-end ">
@@ -480,9 +454,9 @@ setTimeout(fetchData, 2000);
 
               
 
-              <button id="nextButton" onclick="window.location.href='cart.html'"class="btn btn-ghost text-white bg-gray-400  w-full text-xl font-semibold  mb-4">Next</button>
+              <button id="nextButton"  onclick="navigateToCart()"   class="btn btn-ghost text-white bg-gray-400  w-full text-xl font-semibold  mb-4">Next</button>
 
-
+              <!-- onclick="window.location.href='cart.html'" -->
             </div>
 
             <div class="flex justify-evenly">
@@ -545,7 +519,7 @@ setTimeout(fetchData, 2000);
 
         <p class="text-gray-400">@all rights reserved, TicketEase services limited.2024</p>
 
-        <p class="text-gray-400">@all rights reserved, P-Ticket services limited.2024</p>
+        
 
       </div>
 
@@ -612,7 +586,7 @@ setTimeout(fetchData, 2000);
 
     
     <script src="Scripts/scripts.js"></script>
-
+    <script src="./Scripts/supabase.js"></script>
 
 
 

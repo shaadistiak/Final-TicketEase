@@ -6,6 +6,7 @@
     <title>Login & Signup Page</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
 
@@ -20,20 +21,20 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </div>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Home</a></li>
+                    <li><a onclick="window.location.href='index.html' ">Home</a></li>
                     <li><a>About</a></li>
                     <li><a>Destination</a></li>
                     <li><a>Search</a></li>
                 </ul>
               </div>
-              <a class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150 cursor-pointer">TicketEase</a>
+              <a onclick="window.location.href='index.html' " class=" text-3xl font-bold text-black hover:text-[#1DD100] delay-150 cursor-pointer">TicketEase</a>
             </div>
             <div class="navbar-center hidden lg:flex text-xl text-gray-600">
               <ul class="menu menu-horizontal px-1">
-                <li><a>Home</a></li>
-                <li><a>About</a></li>
+                <li><a onclick="window.location.href='index.html' ">Home</a></li>
+                <li><a onclick="window.location.href='about.html' ">About</a></li>
                 <li><a>Destination</a></li>
-                <li><a>Search</a></li>
+                <li><a onclick="window.location.href='ncart.html' ">Cart</a></li>
               </ul>
             </div>
           
@@ -86,20 +87,21 @@
         <div id="login" class="form-content hidden">
             <input type="email" placeholder="Email" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
             <input type="password" placeholder="Password" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
-            <button class="w-full py-2 text-white bg-green-600 rounded hover:bg-green-500">LOGIN</button>
+            <button id="signIN" class="w-full py-2 text-white bg-green-600 rounded hover:bg-green-500">LOGIN</button>
             <p class="mt-4 text-sm">Don't have an account? <a href="#" onclick="openForm(event, 'signup')" class="text-blue-500 hover:underline">Sign Up</a></p>
         </div>
 
         <!-- Signup Form -->
+         <form  action="">
         <div id="signup" class="form-content">
             <input type="text" placeholder="Phone" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
-            <input type="text" placeholder="First Name" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
-            <input type="text" placeholder="Last Name" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
+            <input type="text" placeholder="Username" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
             <input type="email" placeholder="Email" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
             <input type="password" placeholder="Password" class="w-full px-3 py-2 mb-4 border border-gray-300 rounded focus:outline-none focus:border-green-500">
-            <button class="w-full py-2 text-white bg-green-600 rounded hover:bg-green-500">SIGN UP</button>
+            <div id="signupBut" class="w-full text-center m-auto py-2 text-white bg-green-600 rounded hover:bg-green-500">SIGN UP</div>
             <p class="mt-4 text-sm">Have an account? <a href="#" onclick="openForm(event, 'login')" class="text-blue-500 hover:underline">Login</a></p>
         </div>
+      </form>
     </div>
 </main>
 
@@ -154,25 +156,13 @@
 
 
 
-<!-- <script>
-    function openForm(evt, formName) {
-        const forms = document.querySelectorAll('.form-content');
-        forms.forEach(form => form.classList.add('hidden'));
-
-        document.getElementById(formName).classList.remove('hidden');
-
-        // Update active tab styling
-        document.getElementById('loginTab').classList.toggle('border-green-500', formName === 'login');
-        document.getElementById('signupTab').classList.toggle('border-green-500', formName === 'signup');
-    }
-
-    // Default form to show (Signup)
-    openForm(null, 'signup');
-</script> -->
 
 
 <script>
     // Handle form toggle between Login and Signup
+
+
+
     function openForm(evt, formName) {
         const forms = document.querySelectorAll('.form-content');
         forms.forEach(form => form.classList.add('hidden'));
@@ -189,7 +179,8 @@
 
     // Add event listener for login form
     const loginForm = document.getElementById('login');
-    loginForm.addEventListener('submit', function (e) {
+    const loginBtn = document.getElementById('signIN')
+    loginBtn.addEventListener('click', function (e) {
         e.preventDefault();
 
         const emailInput = loginForm.querySelector('input[type="email"]');
@@ -199,60 +190,59 @@
         const password = passwordInput.value.trim();
 
         if (email && password) {
-            // Simulate fetching user data (replace with real login validation logic)
-            const userProfile = {
-                username: "JohnDoe",
-                email: email,
-                phone: "+9876543210", // Replace this with dynamic phone if available
-            };
+           
 
-            // Save user profile to localStorage
-            localStorage.setItem('userProfile', JSON.stringify(userProfile));
-
+            fetchLogin(email)
+            
             // Redirect to profile page
-            alert('Login successful!');
-            window.location.href = 'profile.html';
+    
+           
         } else {
-            alert('Please enter valid email and password.');
+           console.log('something error')
         }
     });
 
     // Add event listener for signup form
     const signupForm = document.getElementById('signup');
-    signupForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    const signupBtn = document.getElementById('signupBut')
+    signupBtn.addEventListener('click', function (e) {
+      console.log('inside signup')
+       
 
         const phoneInput = signupForm.querySelector('input[placeholder="Phone"]');
-        const firstNameInput = signupForm.querySelector('input[placeholder="First Name"]');
-        const lastNameInput = signupForm.querySelector('input[placeholder="Last Name"]');
+        const username = signupForm.querySelector('input[placeholder="Username"]');
+        
         const emailInput = signupForm.querySelector('input[placeholder="Email"]');
         const passwordInput = signupForm.querySelector('input[placeholder="Password"]');
 
         const phone = phoneInput.value.trim();
-        const firstName = firstNameInput.value.trim();
-        const lastName = lastNameInput.value.trim();
+        const Username = username.value.trim();
+    
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
-        if (phone && firstName && lastName && email && password) {
+        if (phone && Username  && email && password) {
             const userProfile = {
-                username: `${firstName} ${lastName}`,
+                username: Username,
                 email: email,
-                phone: phone,
+                phone_num: phone,
+                password: password
             };
-
+            console.log(userProfile)
+            insertData(userProfile)
             // Save user profile to localStorage
             localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
             // Redirect to profile page
-            alert('Signup successful!');
-            window.location.href = 'profile.html';
+            console.log('all data clear')
+            // window.location.href = 'profile.html';
         } else {
-            alert('Please fill out all fields.');
+           console.log('data sent')
         }
     });
 </script>
 
+<script src="./Scripts/supabase.js"></script>
 
 </body>
 </html>
